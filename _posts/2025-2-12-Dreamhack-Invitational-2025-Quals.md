@@ -77,6 +77,37 @@ Sau khi đọc các từ từ file, chương trình sẽ tạo một mảng gồ
 
 Tiếp đến bắt đầu 20 vòng chơi trong 90s, với 10 vòng EASY MODE và 10 vòng HARD MODE         
 Mỗi vòng chương trình sẽ thực hiện tính toán địa chỉ và lấy ra 1 từ, và chúng ta cần phải đoán được chính xác từ đó
+![alt text](/assets/Dreamhack%20Invitational%202025%20Quals/image-3.png)
+```c
+__int64 sub_15D4()
+{
+  int v0; // eax
+  __int64 v1; // kr00_8
+  __int64 v2; // kr08_8
+  unsigned int v3; // edx
+  int v4; // ecx
+  unsigned __int8 v6; // [rsp+9h] [rbp-7h]
+  unsigned __int16 v7; // [rsp+Eh] [rbp-2h]
+
+  if ( dword_4010 > 7 )
+    sub_1507();
+  v0 = dword_4010++;
+  v7 = word_404060[v0];
+  v6 = v7 >> 12;
+  v1 = 5 * (((int)v7 >> 4) & 0xF) + 3 * (v7 & 0xF) + 7 * (HIBYTE(v7) & 0xF) + 2 * v6;
+  v2 = 6 * (HIBYTE(v7) & 0xF) + 7 * (((int)v7 >> 4) & 0xF) + 4 * (v7 & 0xF) + 3 * v6;
+  v3 = (3 * (((int)v7 >> 4) & 0xF) + 2 * (v7 & 0xF) + 5 * (HIBYTE(v7) & 0xF) + 4 * v6) >> 31;
+  v4 = 5 * (v7 & 0xF) + 6 * (((int)v7 >> 4) & 0xF) + 4 * (HIBYTE(v7) & 0xF);
+  return ((unsigned __int8)((((v3 >> 28) + 3 * (((int)v7 >> 4) & 0xF) + 2 * (v7 & 0xF) + 5 * (HIBYTE(v7) & 0xF) + 4 * v6) & 0xF)
+                          - (v3 >> 28)) << 8) | (16
+                                               * (unsigned __int8)((((HIDWORD(v2) >> 28)
+                                                                   + 6 * (HIBYTE(v7) & 0xF)
+                                                                   + 7 * (((int)v7 >> 4) & 0xF)
+                                                                   + 4 * (v7 & 0xF)
+                                                                   + 3 * v6) & 0xF)
+                                                                 - (HIDWORD(v2) >> 28))) | (unsigned __int8)((((HIDWORD(v1) >> 28) + 5 * (((int)v7 >> 4) & 0xF) + 3 * (v7 & 0xF) + 7 * (HIBYTE(v7) & 0xF) + 2 * v6) & 0xF) - (HIDWORD(v1) >> 28)) | ((unsigned __int8)(((((unsigned int)((v4 + 7 * v6) >> 31) >> 28) + 5 * (v7 & 0xF) + 6 * (((int)v7 >> 4) & 0xF) + 4 * (HIBYTE(v7) & 0xF) + 7 * v6) & 0xF) - ((unsigned int)((v4 + 7 * v6) >> 31) >> 28)) << 12);
+}
+```
 
 Vì kích thước giá trị được random chỉ là 2bytes nên có thể thực hiện bruteforce 
 
