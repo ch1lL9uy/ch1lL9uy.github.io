@@ -78,6 +78,7 @@ Sau khi đọc các từ từ file, chương trình sẽ tạo một mảng gồ
 Tiếp đến bắt đầu 20 vòng chơi trong 90s, với 10 vòng EASY MODE và 10 vòng HARD MODE         
 Mỗi vòng chương trình sẽ thực hiện tính toán địa chỉ và lấy ra 1 từ, và chúng ta cần phải đoán được chính xác từ đó
 ![alt text](/assets/Dreamhack%20Invitational%202025%20Quals/image-3.png)
+
 ```c
 __int64 sub_15D4()
 {
