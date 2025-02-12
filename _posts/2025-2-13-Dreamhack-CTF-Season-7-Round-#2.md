@@ -67,6 +67,7 @@ LABEL_16:
 ```
 
 Đầu tiên, ta thấy rằng chuỗi có độ dài là 64 kí tự
+
 ![alt text](/assets/Dreamhack%20CTF%20Season%207%20Round%20%232/image.png)
 
 Tiếp đến, chương trình xử lý từng nhóm 4 kí tự và chuyển đổi thành một số nguyên hex
