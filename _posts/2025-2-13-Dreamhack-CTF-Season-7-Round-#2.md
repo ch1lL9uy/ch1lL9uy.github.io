@@ -85,6 +85,7 @@ Cuối cùng là so sánh `result` với giá trị tương ứng trong bảng `
 ![alt text](/assets/Dreamhack%20CTF%20Season%207%20Round%20%232/image-3.png)
 
 Ta thấy rằng giá trị mỗi lần được chuyển đổi là 4 kí tự hex, tức là 2bytes -> bruteforce
+
 Trước đó tôi cần xem giá trị bắt đầu của mảng `dword_4060`
 ![alt text](/assets/Dreamhack%20CTF%20Season%207%20Round%20%232/image-4.png)
 Ta thấy rằng nó bắt đầu từ byte thứ 0x3060, nên tôi sẽ đọc toàn bộ bắt đầu từ offset 0x3060
