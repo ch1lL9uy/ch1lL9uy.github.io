@@ -6,7 +6,7 @@ tags: [Reverse Engineering, Dreamhack CTF]
 ---
 
 ## Branches and Leaves 
-file: [here](/assets/Dreamhack%20CTF%20Season%207%20Round%20#2/Branches%20and%20Leaves.zip)
+file: [here](/assets/Dreamhack%20CTF%20Season%207%20Round%20%232/Branches%20and%20Leaves.zip)
 
 ```c
 __int64 __fastcall sub_11E0(const char *a1)
@@ -67,25 +67,25 @@ LABEL_16:
 ```
 
 Đầu tiên, ta thấy rằng chuỗi có độ dài là 64 kí tự
-![alt text](/assets/Dreamhack%20CTF%20Season%207%20Round%20#2/image.png)
+![alt text](/assets/Dreamhack%20CTF%20Season%207%20Round%20%232/image.png)
 
 Tiếp đến, chương trình xử lý từng nhóm 4 kí tự và chuyển đổi thành một số nguyên hex
-![alt text](/assets/Dreamhack%20CTF%20Season%207%20Round%20#2/image-1.png)
+![alt text](/assets/Dreamhack%20CTF%20Season%207%20Round%20%232/image-1.png)
 
 Thực hiện duyệt qua `dword_4060`
-![alt text](/assets/Dreamhack%20CTF%20Season%207%20Round%20#2/image-2.png)
+![alt text](/assets/Dreamhack%20CTF%20Season%207%20Round%20%232/image-2.png)
 
 * Thực hiện dịch phải `v4` 16 lần (giá trị vừa được chuyển đổi ở trên)
 * Tính `result` bằng cách ánh xạ vào mảng `dword_4060`
 * Nếu `result` bằng -1 hoặc lớn hơn 0x3FFF thì sẽ thoát chương trình
 
 Cuối cùng là so sánh `result` với giá trị tương ứng trong bảng `dword_4020`
-![alt text](/assets/Dreamhack%20CTF%20Season%207%20Round%20#2/image-3.png)
+![alt text](/assets/Dreamhack%20CTF%20Season%207%20Round%20%232/image-3.png)
 
 Ta thấy rằng giá trị mỗi lần được chuyển đổi là 4 kí tự hex, tức là 2bytes -> bruteforce
 
 Trước đó tôi cần xem giá trị bắt đầu của mảng `dword_4060`
-![alt text](/assets/Dreamhack%20CTF%20Season%207%20Round%20#2/image-4.png)
+![alt text](/assets/Dreamhack%20CTF%20Season%207%20Round%20%232/image-4.png)
 Ta thấy rằng nó bắt đầu từ byte thứ 0x3060, nên tôi sẽ đọc toàn bộ bắt đầu từ offset 0x3060
 
 **Script**
